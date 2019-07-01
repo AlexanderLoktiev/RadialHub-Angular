@@ -1,8 +1,25 @@
 /// <reference path="../../node_modules/@types/googlemaps/index.d.ts"/>
-import {OverlayView} from '@types/googlemaps';
+declare const google, args;
 
-export class HTMLMapMarker extends OverlayView {
-    constructor() {
+export class HTMLMapMarker extends google.maps.OverlayView {
+    constructor(options) {
         super();
+        this.setMap(options.map);
+    }
+
+    draw() {
+        console.dir(this);
+    }
+
+    remove() {
+
+    }
+
+    getPosition() {
+
+    }
+
+    getDraggable() {
+
     }
 }
