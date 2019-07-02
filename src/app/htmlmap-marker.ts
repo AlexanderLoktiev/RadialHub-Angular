@@ -1,25 +1,40 @@
 /// <reference path="../../node_modules/@types/googlemaps/index.d.ts"/>
-declare const google, args;
+import set = Reflect.set;
+
+declare const google;
 
 export class HTMLMapMarker extends google.maps.OverlayView {
-    constructor(options) {
+    constructor(opt) {
         super();
-        this.setMap(options.map);
+        this.options = opt;
+        this.htmlElement = document.createElement('div');
+        this.setMap(opt.map);
     }
 
     draw() {
-        console.dir(this);
-    }
+        if (this.options.htmlEl) {
+            this.htmlElement.innerHTML = this.options.htmlEl;
+        } else {
+        }
 
-    remove() {
+        const panes = this.getPanes();
+        panes.overlayImage.appendChild(this.htmlElement);
 
-    }
+        const points = this.getProjection().fromLatLngToDivPixel(this.options.latLng);
 
-    getPosition() {
 
-    }
+        if (points) {
+            this.htmlElement.style.position = 'absolute';
+            this.htmlElement.style.left = `${points.x}px`;
+            this.htmlElement.style.top = `${points.y}px`;
+        }
 
-    getDraggable() {
-
+        google.maps.event.addDomListener(this.options.map, 'zoom_changed', () => {
+            setTimeout(() => {
+                console.log(`${ 432 / this.options.map.getZoom()}px`);
+                this.htmlElement.setAttribute('width', `${ 432 / this.options.map.getZoom()}px`);
+                this.htmlElement.setAttribute('height', `${ 432 / this.options.map.getZoom()}px`);
+            }, 100);
+        });
     }
 }
