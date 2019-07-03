@@ -7,6 +7,9 @@ export class HTMLMapMarker extends google.maps.OverlayView {
     constructor(opt) {
         super();
         this.options = opt;
+        this.lat = opt.lat;
+        this.lng = opt.lng;
+        this.pos = new google.maps.LatLng(this.lat, this.lng);
         this.htmlElement = document.createElement('div');
         this.setMap(opt.map);
     }
@@ -14,13 +17,13 @@ export class HTMLMapMarker extends google.maps.OverlayView {
     draw() {
         if (this.options.htmlEl) {
             this.htmlElement.innerHTML = this.options.htmlEl;
-        } else {
+            this.htmlElement.classList = ['marker-wrap'];
         }
 
         const panes = this.getPanes();
         panes.overlayImage.appendChild(this.htmlElement);
 
-        const points = this.getProjection().fromLatLngToDivPixel(this.options.latLng);
+        const points = this.getProjection().fromLatLngToDivPixel(this.pos);
 
 
         if (points) {
@@ -30,11 +33,21 @@ export class HTMLMapMarker extends google.maps.OverlayView {
         }
 
         google.maps.event.addDomListener(this.options.map, 'zoom_changed', () => {
-            setTimeout(() => {
-                console.log(`${ 432 / this.options.map.getZoom()}px`);
-                this.htmlElement.setAttribute('width', `${ 432 / this.options.map.getZoom()}px`);
-                this.htmlElement.setAttribute('height', `${ 432 / this.options.map.getZoom()}px`);
-            }, 100);
+            // console.dir(panes.overlayImage);
         });
+    }
+
+    getPosition() {
+        return this.pos;
+    }
+
+    remove() {
+        if (this.htmlElement) {
+            this.htmlElement.parentElement.removeChild(this.htmlElement);
+        }
+    }
+
+    getDraggable() {
+        return false;
     }
 }
