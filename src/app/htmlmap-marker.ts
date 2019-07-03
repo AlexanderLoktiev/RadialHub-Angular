@@ -15,26 +15,11 @@ export class HTMLMapMarker extends google.maps.OverlayView {
     }
 
     draw() {
-        if (this.options.htmlEl) {
-            this.htmlElement.innerHTML = this.options.htmlEl;
-            this.htmlElement.classList = ['marker-wrap'];
-        }
-
         const panes = this.getPanes();
         panes.overlayImage.appendChild(this.htmlElement);
 
-        const points = this.getProjection().fromLatLngToDivPixel(this.pos);
-
-
-        if (points) {
-            this.htmlElement.style.position = 'absolute';
-            this.htmlElement.style.left = `${points.x}px`;
-            this.htmlElement.style.top = `${points.y}px`;
-        }
-
-        google.maps.event.addDomListener(this.options.map, 'zoom_changed', () => {
-            // console.dir(panes.overlayImage);
-        });
+        this.createDomElement();
+        this.placeMarker();
     }
 
     getPosition() {
@@ -49,5 +34,22 @@ export class HTMLMapMarker extends google.maps.OverlayView {
 
     getDraggable() {
         return false;
+    }
+
+    private placeMarker() {
+        const points = this.getProjection().fromLatLngToDivPixel(this.pos);
+
+        if (points) {
+            this.htmlElement.style.position = 'absolute';
+            this.htmlElement.style.left = `${points.x}px`;
+            this.htmlElement.style.top = `${points.y}px`;
+        }
+    }
+
+    private createDomElement() {
+        if (this.options.htmlEl) {
+            this.htmlElement.innerHTML = this.options.htmlEl;
+            this.htmlElement.classList = ['marker-wrap'];
+        }
     }
 }
