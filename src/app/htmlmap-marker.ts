@@ -9,6 +9,7 @@ export class HTMLMapMarker extends google.maps.OverlayView {
         this.options = opt;
         this.lat = opt.lat;
         this.lng = opt.lng;
+        this.likes = opt.likes,
         this.pos = new google.maps.LatLng(this.lat, this.lng);
         this.htmlElement = document.createElement('div');
         this.setMap(opt.map);
@@ -19,6 +20,7 @@ export class HTMLMapMarker extends google.maps.OverlayView {
         panes.overlayImage.appendChild(this.htmlElement);
 
         this.createDomElement();
+        this.fillProgressBar();
         this.placeMarker();
     }
 
@@ -34,6 +36,23 @@ export class HTMLMapMarker extends google.maps.OverlayView {
 
     getDraggable() {
         return false;
+    }
+
+    private fillProgressBar() {
+        const diametr = this.getDiametr();
+        const circumference = Math.PI * diametr;
+        const svg = this.htmlElement.querySelector('svg');
+
+        svg.querySelector('#bar').style.strokeDasharray = circumference;
+        svg.querySelector('#bar').style.strokeDashoffset = circumference * (1 - this.likes / 100);
+    }
+
+    private getDiametr() {
+        const svg = this.htmlElement.querySelector('svg');
+
+        if (svg && parseInt(svg.getAttribute('width'), 10)) {
+            return (parseInt(svg.getAttribute('width'), 10));
+        }
     }
 
     private placeMarker() {
