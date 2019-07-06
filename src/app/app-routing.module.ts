@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DiscoverComponent } from './discover/discover.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: 'discover', component: DiscoverComponent},
+  {path: '', redirectTo: '/discover', pathMatch: 'full'}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

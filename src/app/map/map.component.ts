@@ -22,9 +22,9 @@ export class MapComponent implements OnInit {
 
     ngOnInit() {
         this.map = this.el.nativeElement.querySelector('#map');
-        this.users = [{lat: 52.243524, lng: 20.960292, photo: 'https://picsum.photos/id/1005/500', id: 1, likes: 70},
-            {lat: 52.233411, lng: 21.150191, photo: 'https://picsum.photos/id/1027/500', id: 2, likes: 50},
-            {lat: 52.282507, lng: 20.935849, photo: 'https://picsum.photos/id/338/500', id: 3, likes: 90}];
+        this.users = [{lat: 52.243524, lng: 20.960292, name: 'Adam', photo: 'https://picsum.photos/id/1005/500', id: 1, likes: 70},
+            {lat: 52.233411, lng: 21.150191, name: 'Taylor', photo: 'https://picsum.photos/id/1027/500', id: 2, likes: 50},
+            {lat: 52.282507, lng: 20.935849, name: 'Devid', photo: 'https://picsum.photos/id/338/500', id: 3, likes: 90}];
 
         if (this.map && google) {
             // Map initialisation
@@ -43,7 +43,7 @@ export class MapComponent implements OnInit {
                     htmlEl: `<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg
                             'xmlns:xlink="http://www.w3.org/1999/xlink">
                                <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
-                               <title>avatar-image</title>
+                               <title>${user.name}</title>
                                <desc>Created with Sketch.</desc>
                                <defs>
                                    <pattern id="pattern-${user.id}" patternUnits="objectBoundingBox" x="0%" width="100%" height="100%">
