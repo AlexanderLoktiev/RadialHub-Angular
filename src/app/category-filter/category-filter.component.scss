@@ -1,0 +1,32 @@
+@import "../../config";
+
+:host {
+  display: inline-block;
+}
+
+.category {
+  position: relative;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  select {
+    border: 1px solid $color-gray;
+    background-color: transparent;
+    padding: 12px 37px 12px 14px;
+    font-size: 16px;
+    color: $color-gray-2;
+    border-radius: 6px;
+    letter-spacing: 0.19px;
+  }
+
+  .fa-chevron-down {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    right: 12px;
+    font-size: 11px;
+    color: $color-blue;
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,67 @@
+@import "../../config";
+
+:host {
+  display: inline-block;
+
+  .search {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+  }
+
+  input {
+    display: block;
+    width: calc(100% - 45px);
+    border-radius: 22px;
+    background-color: transparent;
+    border: 1px solid $color-gray;
+    padding: 13px 8px 10px 37px;
+    font: {
+      family: $latoRegular;
+      size: 16px;
+      weight: normal;
+    }
+    color: $color-gray-3;
+
+    &::-webkit-input-placeholder { /* Edge */
+      font: {
+        family: $latoRegular;
+        size: 16px;
+        weight: normal;
+      }
+      color: $color-gray-3;
+    }
+
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      font: {
+        family: $latoRegular;
+        size: 16px;
+        weight: normal;
+      }
+      color: $color-gray-3;
+    }
+
+    &::placeholder {
+      font: {
+        family: $latoRegular;
+        size: 16px;
+        weight: normal;
+      }
+      color: $color-gray-3;
+    }
+  }
+
+  .fa-search {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 14px;
+    font: {
+      size: 16px;
+      weight: normal;
+    }
+
+    color: $color-gray-3;
+    transform: translateY(-50%);
+  }
+}

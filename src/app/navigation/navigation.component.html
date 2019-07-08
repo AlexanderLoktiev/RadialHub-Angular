@@ -1,0 +1,7 @@
+<nav class="nav" *ngIf="items.length">
+  <ul class="nav-list">
+      <li *ngFor="let item of items" class="nav-list__item">
+        <a routerLink="/{{ item.path }}" routerLinkActive="active">{{ item.path | titlecase }}</a>
+      </li>
+  </ul>
+</nav>

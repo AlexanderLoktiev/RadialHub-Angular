@@ -1,0 +1,12 @@
+@import "../../config";
+
+:host {
+  display: inline-block;
+}
+
+.filter-wrapper {
+  font: {
+    family: $latoSemibold;
+    size: 1.6rem;
+  }
+}
