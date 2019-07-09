@@ -4,17 +4,31 @@
   padding-top: 24px;
 }
 
+header {
+  display: flex;
+  align-items: center;
+}
+
 .header {
+
   &__left {
     display: inline-flex;
+    width: 44%;
+    //margin-right: 14.2%;
   }
 
   &__right {
     display: inline-flex;
+    justify-content: flex-end;
+    width: calc(100% - 44%);
   }
 }
 
 .logo {
   margin-top: 6px;
   margin-right: 15px;
+}
+
+.avatar {
+  margin-right: 4%;
 }

@@ -1,7 +1,9 @@
 @import "../../config";
 
 :host {
-  display: inline-block;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .filter-wrapper {
