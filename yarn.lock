@@ -319,6 +319,18 @@
     semver "5.6.0"
     semver-intersect "1.4.0"
 
+"@types/google-maps@*":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@types/google-maps/-/google-maps-3.2.1.tgz#68b84f74773960fbf4c76e2d2bc62838b8cd5026"
+  integrity sha512-0JeYMqVUeolC2hC1v8s49vjg5zt/tQXDzzcZfWxzx8Kcu1xDSpULFkhI33CIUZ/r8PmGvrud9EEZqFhJlOE4/A==
+  dependencies:
+    "@types/googlemaps" "*"
+
+"@types/googlemaps@*":
+  version "3.39.0"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.39.0.tgz#871b4649c0995f9d013f5edee776809e599977f7"
+  integrity sha512-SiD5JrB5wkA2JvkP7Tn3D+L4F50QXtnQI+J6Y/HnDhfyp0vlB6tNz14BuOOXV1rwP2vnTwE1uqNjfaKXCmuHDg==
+
 "@types/googlemaps@^3.36.5":
   version "3.36.5"
   resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.36.5.tgz#9fa57d430e4982ce9f2352e1a48dfe5c294fe868"
@@ -340,6 +352,13 @@
   integrity sha512-2ZOKrxb8bKRmP/po5ObYnRDgFE4i+lQiEB27bAMmtMWLgJSqlIDqlLx6S0IRorpOmOPRQ6O80NujTmQAtBkeNw==
   dependencies:
     "@types/jasmine" "*"
+
+"@types/markerclustererplus@^2.1.33":
+  version "2.1.33"
+  resolved "https://registry.yarnpkg.com/@types/markerclustererplus/-/markerclustererplus-2.1.33.tgz#0542a2fabdf46fa474a3de00df5b0b399f5694a5"
+  integrity sha512-ZDxsLUp8BmK9MVZZeQVDDzVrEXgRL0021AQcfXqfreFhdfZ9+PS0P6o4nZBvoIVYTmGSBemdCdI6mL6hf9yWvg==
+  dependencies:
+    "@types/google-maps" "*"
 
 "@types/node@*":
   version "12.0.10"
@@ -1577,10 +1596,15 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@^2.12.1, commander@^2.19.0, commander@~2.20.0:
+commander@^2.12.1, commander@^2.19.0:
   version "2.20.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
   integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
+
+commander@~2.20.3:
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
+  integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -2920,9 +2944,9 @@ handle-thing@^2.0.0:
   integrity sha512-d4sze1JNC454Wdo2fkuyzCr6aHcbL6PGGuFAz0Li/NcOm1tCHGnWDRmJP85dh9IhQErTc2svWFEX5xHIOo//kQ==
 
 handlebars@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.1.2.tgz#b6b37c1ced0306b221e094fc7aca3ec23b131b67"
-  integrity sha512-nvfrjqvt9xQ8Z/w0ijewdD/vvWDTOweBUm96NTr66Wfvo1mJenBLwcYmPs3TIBP5ruzYGD7Hx/DaM9RmhroGPw==
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.5.3.tgz#5cf75bd8714f7605713511a56be7c349becb0482"
+  integrity sha512-3yPecJoJHK/4c6aZhSvxOyG4vJKDshV36VHp0iVCDVh7o9w2vwi3NSnL2MMPj3YdduqaBcu7cGbggJQM0br9xA==
   dependencies:
     neo-async "^2.6.0"
     optimist "^0.6.1"
@@ -6753,11 +6777,11 @@ typescript@3.2.4, typescript@~3.2.2:
   integrity sha512-0RNDbSdEokBeEAkgNbxJ+BLwSManFy9TeXz8uW+48j/xhEXv1ePME60olyzw2XzUqUBNAYFeJadIqAgNqIACwg==
 
 uglify-js@^3.1.4:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.6.0.tgz#704681345c53a8b2079fb6cec294b05ead242ff5"
-  integrity sha512-W+jrUHJr3DXKhrsS7NUVxn3zqMOFn0hL/Ei6v0anCIMoKC93TjcflTagwIHLW7SfMFfiQuktQyFVCFHGUE0+yg==
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.7.3.tgz#f918fce9182f466d5140f24bb0ff35c2d32dcc6a"
+  integrity sha512-7tINm46/3puUA4hCkKYo4Xdts+JDaVC9ZPRcG8Xw9R4nhO/gZgUM3TENq8IF4Vatk8qCig4MzP/c8G4u2BkVQg==
   dependencies:
-    commander "~2.20.0"
+    commander "~2.20.3"
     source-map "~0.6.1"
 
 ultron@~1.1.0:
