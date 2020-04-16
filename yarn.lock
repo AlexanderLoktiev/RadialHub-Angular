@@ -319,6 +319,18 @@
     semver "5.6.0"
     semver-intersect "1.4.0"
 
+"@types/google-maps@*":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@types/google-maps/-/google-maps-3.2.2.tgz#aa97b0880be787d7fb04662707e36125c2e6e2d8"
+  integrity sha512-/XPVfS28VzUdE/HlmBRoe5ii1nNMyWujyRfRY08bD/JgmPlWSiY8enB2dqTe9mlc3kULq7LfFa1wcupM+lQfqA==
+  dependencies:
+    "@types/googlemaps" "*"
+
+"@types/googlemaps@*":
+  version "3.39.3"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.39.3.tgz#8664e424f335802c8aa46a94676666b0a0f31d97"
+  integrity sha512-L8O9HAVFZj0TuiS8h5ORthiMsrrhjxTC8XUusp5k47oXCst4VTm+qWKvrAvmYMybZVokbp4Udco1mNwJrTNZPQ==
+
 "@types/googlemaps@^3.36.5":
   version "3.36.5"
   resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.36.5.tgz#9fa57d430e4982ce9f2352e1a48dfe5c294fe868"
@@ -340,6 +352,13 @@
   integrity sha512-2ZOKrxb8bKRmP/po5ObYnRDgFE4i+lQiEB27bAMmtMWLgJSqlIDqlLx6S0IRorpOmOPRQ6O80NujTmQAtBkeNw==
   dependencies:
     "@types/jasmine" "*"
+
+"@types/markerclustererplus@^2.1.33":
+  version "2.1.33"
+  resolved "https://registry.yarnpkg.com/@types/markerclustererplus/-/markerclustererplus-2.1.33.tgz#0542a2fabdf46fa474a3de00df5b0b399f5694a5"
+  integrity sha512-ZDxsLUp8BmK9MVZZeQVDDzVrEXgRL0021AQcfXqfreFhdfZ9+PS0P6o4nZBvoIVYTmGSBemdCdI6mL6hf9yWvg==
+  dependencies:
+    "@types/google-maps" "*"
 
 "@types/node@*":
   version "12.0.10"
@@ -574,7 +593,7 @@ after@0.8.2:
   resolved "https://registry.yarnpkg.com/after/-/after-0.8.2.tgz#fedb394f9f0e02aa9768e702bda23b505fae7e1f"
   integrity sha1-/ts5T58OAqqXaOcCvaI7UF+ufh8=
 
-agent-base@4, agent-base@^4.1.0:
+agent-base@4, agent-base@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-4.3.0.tgz#8165f01c436009bccad0b1d122f05ed770efc6ee"
   integrity sha512-salcGninV0nPrwpGNn4VTXBb1SOuXQBiqbrNXoeizJsHrsL6ERFM2Ne3JUSBWRE6aeNJI2ROP/WEEIDUiDe3cg==
@@ -3137,11 +3156,11 @@ https-browserify@^1.0.0:
   integrity sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=
 
 https-proxy-agent@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-2.2.1.tgz#51552970fa04d723e04c56d04178c3f92592bbc0"
-  integrity sha512-HPCTS1LW51bcyMYbxUIOO4HEOlQ1/1qRaFWcyxvwaqUS9TY88aoEuHUY33kuAh1YhVVaDQhLZsnPd+XNARWZlQ==
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-2.2.4.tgz#4ee7a737abd92678a293d9b34a1af4d0d08c787b"
+  integrity sha512-OmvfoQ53WLjtA9HeYP9RNrWMJzzAz1JGaSFr1nijg0PVR1JaD/xbJq1mdEIIlxGpXp9eSe/O2LgU9DJmTPd0Eg==
   dependencies:
-    agent-base "^4.1.0"
+    agent-base "^4.3.0"
     debug "^3.1.0"
 
 humanize-ms@^1.2.1:
